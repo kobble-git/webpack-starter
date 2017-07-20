@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -9,10 +10,16 @@ const extractPlugin = new ExtractTextPlugin({
 module.exports = {
     entry: './src/js/app.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist'
     },
+    //devtool: 'inline-source-map',
+    //devServer: {
+    //    hot: true,
+    //    contentBase: path.resolve(__dirname, 'dist'),
+    //    publicPath: '/'
+    //},
     module: {
         rules: [
             {
@@ -36,6 +43,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
+        new webpack.HotModuleReplacementPlugin(),
         extractPlugin
     ]
 };
