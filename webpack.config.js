@@ -14,12 +14,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist'
     },
-    //devtool: 'inline-source-map',
-    //devServer: {
-    //    hot: true,
-    //    contentBase: path.resolve(__dirname, 'dist'),
-    //    publicPath: '/'
-    //},
+    devtool: 'inline-source-map',
+    devServer: {
+        hot: true,
+        //contentBase: path.resolve(__dirname, '/dist'),
+        //publicPath: '/'
+    },
     module: {
         rules: [
             {
