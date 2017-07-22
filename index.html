@@ -1,10 +1,30 @@
 <html>
     <head>
+        <title>Random Quote Generator</title>
         <link rel="stylesheet" href="dist/main.css"/>
-        <title>Webpack Setup</title>
     </head>
     <body>
-        <h1>Webpack setup example</h1>
+        <div class="quote-generator">
+            <div class="quote">
+                <blockquote class="quote__text">
+                    block quotation here block quotation here block quotation here block quotation here block quotation here
+                    <br>
+                </blockquote>
+                <cite class="quote__citation">
+                    citation here
+                </cite>
+            </div>
+            <div class="quote__footer">
+                <div class="like-dislike">
+                    <span class="vote-button bote-button--like">Like</span>
+                    <span class="vote-button vote-button--dislike">Dislike</span>
+                </div>
+                <div class="share">
+                    <a href="twitter">twitter</a>
+                    <a href="facebook">facebook</a>
+                </div>
+            </div>
+        </div>
         <script src="dist/bundle.js"></script>
     </body>
 </html>
