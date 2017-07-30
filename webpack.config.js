@@ -2,15 +2,16 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const extractPlugin = new ExtractTextPlugin({
-    filename: 'main.css'
+    filename: 'main.[contenthash].css'
 });
 
 module.exports = {
     entry: './src/js/app.js',
     output: {
-        filename: 'bundle.js',
+        filename: 'bundle.[hash].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist'
     },
@@ -50,6 +51,10 @@ module.exports = {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+          filename : '../index.html',
+          template : 'src/index.html'
+        }),
         new CleanWebpackPlugin(['dist']),
         new webpack.HotModuleReplacementPlugin(),
         extractPlugin

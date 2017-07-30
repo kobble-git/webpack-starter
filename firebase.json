@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      ".babelrc",
+      ".firebaserc",
+      ".gitignore",
+      ".jshintrc",
+      "src/**",
+      "test/**",
+      ".git/**",
+      "package.json",
+      "firebase.json",
+      "node_modules/**",
+      "package-lock.json",
+      "webpack.config.js"
+    ]
+  }
+}
